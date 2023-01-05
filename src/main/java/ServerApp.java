@@ -48,6 +48,7 @@ public class ServerApp {
         ServletContextHandler handler = new ServletContextHandler();
         handler.addServlet(LoginServlet.class, "/login");
         handler.addServlet(new ServletHolder(loginForm), "/login-form");
+        handler.addServlet(UsersRedirectServlet.class, "/");
         handler.addServlet(UsersRedirectServlet.class, "/users");
         handler.addServlet(UsersRedirectServlet.class, "/users/");
         handler.addServlet(new ServletHolder(usersPage), "/users/*");
