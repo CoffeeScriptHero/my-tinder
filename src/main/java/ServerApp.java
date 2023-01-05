@@ -19,7 +19,7 @@ import java.io.File;
 import java.sql.*;
 import java.util.EnumSet;
 
-// http://localhost:8050/users
+// http://localhost:5000/
 public class ServerApp {
     private static final EnumSet<DispatcherType> ft = EnumSet.of(DispatcherType.REQUEST);
     private final static String URL = "jdbc:postgresql://tai.db.elephantsql.com/kmsmihnj";
@@ -31,7 +31,7 @@ public class ServerApp {
         Configuration conf = new Configuration(Configuration.VERSION_2_3_31);
         conf.setDirectoryForTemplateLoading(new File("dynamic"));
         conf.setDefaultEncoding("UTF-8");
-        Server server = new Server(8050);
+        Server server = new Server(5000);
 
         UserController userController = new UserController(conn);
         UserServlet usersPage = new UserServlet(userController, conf);
