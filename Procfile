@@ -1,1 +1,1 @@
-web:    java $JAVA_OPTS -jar target/dependency/java-tinder.jar --port $PORT target/*.war
+web: java $JAVA_OPTS -cp ./target/classes:target/deps/* ServerApp
